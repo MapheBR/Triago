@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triagem - Sistema de Triagem</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <span id="userName">Carregando...</span>
+            </div>
+            <h2>Triagem Virtual</h2>
+            <button onclick="handleLogout()" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+
+        <div id="chatMessages" class="chat-messages">
+            <!-- Mensagens serão adicionadas aqui dinamicamente -->
+        </div>
+
+        <div class="chat-input">
+            <div id="buttonGroup" class="button-group">
+                <!-- Botões serão adicionados aqui dinamicamente -->
+            </div>
+            <div id="textInput" class="text-input" style="display: none;">
+                <input type="text" id="userResponse" placeholder="Digite sua resposta...">
+                <button id="sendResponse">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Inicializar ChatBot apenas uma vez quando a página carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof ChatBot !== 'undefined') {
+                ChatBot.init();
+            }
+        });
+    </script>
+</body>
+</html>
